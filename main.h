@@ -7,6 +7,8 @@
 #include <stdlib.h>
 
 int _printf(const char *format, ...);
+int print_s(va_list args);
+int print_i(va_list args);
 
 /**
  * struct print_func - a key for picking functions to use for printing

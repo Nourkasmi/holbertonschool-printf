@@ -8,6 +8,5 @@
 
 int _printf(const char *format, ...)
 {
-    nour kasmi yekhdem 
+
 }
-a roho 

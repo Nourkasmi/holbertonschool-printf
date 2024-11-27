@@ -12,8 +12,7 @@ int i = 0, len = 0, j = 0;
 specifier_t spec_table[] = {
 {'c', print_c},
 {'s', print_s},
-{'i', print_i},
-{'d', print_d},
+{'i', print_i}, {'d', print_d},
 {0, NULL}
 };
 if (format == NULL)

@@ -36,11 +36,11 @@ for (i = 0; str[i] != '\0'; i++)
 {
 _putchar(str[i]);
 }
-return (i);
-}
 if (str == (char *)0)
 {
 return (i - 16);
+}
+return (i);
 }
 }
 

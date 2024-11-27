@@ -7,22 +7,21 @@
 #include <stdlib.h>
 
 int _printf(const char *format, ...);
+int _putchar(char c);
 int print_s(va_list args);
 int print_i(va_list args);
+int print_c(va_list args);
+int print_d(va_list args);
 
 /**
- * struct print_func - a key for picking functions to use for printing
- * in 3-print_all.c
- *
- * @print: function to use for printing
+ * struct specifier - Struct to map a format specifier to a print function
+ * @func: function to use for printing
  * @spec: character specifier
  */
-typedef struct print_func
+typedef struct specifier
 {
-void (*print)(va_list args);
 char spec;
-} print_func;
-
-
+int (*func)(va_list args);
+} specifier_t;
 
 #endif

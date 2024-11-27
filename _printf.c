@@ -1,12 +1,46 @@
 #include "main.h"
-
 /**
- * _printf - Custom implementation of printf
- * @format: The format string containing text and directives
- * Return: The number of characters printed (excluding null byte)
+ * _printf - Custom printf function
+ * @format: Format string containing specifiers
+ * Return: Number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
-
+va_list args;
+int i = 0;
+int j = 0;
+int len = 0;
+specifier_t spec_table[] = {
+{'c', print_c},
+{'s', print_s},
+{'i', print_i},
+{'d', print_d},
+{0, NULL}
+};
+if (format == NULL)
+return (0);
+va_start(args, format);
+while (format[i])
+{
+if (format[i] == '%' && format[i + 1] != '\0')
+{
+i++;
+for (j = 0; spec_table[j].spec; j++)
+{
+if (spec_table[j].spec == format[i])
+{
+len += spec_table[j].func(args);
+break;
+}
+}
+}
+else
+{
+_putchar(format[i]);
+len++;
+}
+i++;
+}
+va_end(args);
+return (len);
 }

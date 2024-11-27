@@ -15,7 +15,7 @@ specifier_t spec_table[] = {
 {'s', print_s},
 {'i', print_i},
 {'d', print_d},
-{NULL, NULL}
+{  0, NULL}
 };
 if (format == NULL)
 return (0);

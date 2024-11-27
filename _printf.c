@@ -7,22 +7,25 @@
 int _printf(const char *format, ...)
 {
 va_list args;
-int i = 0;
-int j = 0;
-int len = 0;
+int i = 0, len = 0, j = 0;
 specifier_t spec_table[] = {
 {'c', print_c},
 {'s', print_s},
-{'i', print_i},
-{'d', print_d},
-{  0, NULL}
+{'i', print_i}, {'d', print_d},
+{0, NULL}
 };
 if (format == NULL)
 return (0);
 va_start(args, format);
 while (format[i])
 {
-if (format[i] == '%' && format[i + 1] != '\0')
+if (format[i] == '%' && format[i + 1] == '%')
+{
+_putchar('%');
+len++;
+i += 1;
+}
+else if (format[i] == '%' && format[i + 1] != '\0')
 {
 i++;
 for (j = 0; spec_table[j].spec; j++)

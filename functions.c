@@ -28,17 +28,13 @@ for (i = 0; null_string[i] != '\0'; i++)
 {
 _putchar(null_string[i]);
 }
-return (1);
+return (i);
 }
 else
 {
 for (i = 0; str[i] != '\0'; i++)
 {
 _putchar(str[i]);
-}
-if (str == (char *)0)
-{
-return (i - 16);
 }
 return (i);
 }

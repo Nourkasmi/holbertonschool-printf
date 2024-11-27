@@ -24,6 +24,8 @@ int main(void)
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
+    _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+    printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
     len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);

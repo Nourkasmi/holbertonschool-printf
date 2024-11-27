@@ -38,6 +38,10 @@ _putchar(str[i]);
 }
 return (i);
 }
+if (str == (char *)0)
+{
+return (i - 16);
+}
 }
 
 /**

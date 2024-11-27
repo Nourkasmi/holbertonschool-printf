@@ -28,17 +28,13 @@ for (i = 0; null_string[i] != '\0'; i++)
 {
 _putchar(null_string[i]);
 }
-return (1);
+return (i);
 }
 else
 {
 for (i = 0; str[i] != '\0'; i++)
 {
 _putchar(str[i]);
-}
-if (str == (char *)0)
-{
-return (i - 16);
 }
 return (i);
 }
@@ -76,9 +72,8 @@ d /= 10;
 return (length);
 }
 
-
 /**
- * print_d - Prints a decimal (alias for print_int)
+ * print_d - Prints a decimal
  * @args: va_list containing the decimal to print
  * Return: Number of characters printed
  */

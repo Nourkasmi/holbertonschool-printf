@@ -72,9 +72,8 @@ d /= 10;
 return (length);
 }
 
-
 /**
- * print_d - Prints a decimal (alias for print_int)
+ * print_d - Prints a decimal
  * @args: va_list containing the decimal to print
  * Return: Number of characters printed
  */

@@ -19,25 +19,16 @@ return (1);
  */
 int print_s(va_list args)
 {
-int i;
 char *str = va_arg(args, char *);
+int i = 0;
 if (str == NULL)
+str = "(null)";
+while (*str)
 {
-char *null_string = "(null)";
-for (i = 0; null_string[i] != '\0'; i++)
-{
-_putchar(null_string[i]);
+_putchar(*str++);
+i++;
 }
 return (i);
-}
-else
-{
-for (i = 0; str[i] != '\0'; i++)
-{
-_putchar(str[i]);
-}
-return (i);
-}
 }
 
 /**

@@ -7,6 +7,7 @@
 #include <stdlib.h>
 
 int _printf(const char *format, ...);
+int (*cf(char c))(va_list);
 int _putchar(char c);
 int print_s(va_list args);
 int print_i(va_list args);

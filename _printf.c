@@ -8,10 +8,8 @@
 int _printf(const char *format, ...)
 {
 va_list args;
-int i = 0, len = 0, j = 0;
-specifier_t spec_table[] = {
-{'c', print_c}, {'s', print_s}, {'i', print_i}, {'d', print_d}, {0, NULL}
-};
+int i = 0, len = 0;
+int (*func)(va_list);
 if (format == NULL)
 return (-1);
 va_start(args, format);
@@ -33,13 +31,14 @@ i++;
 else
 {
 i++;
-for (j = 0; spec_table[j].spec; j++)
+func = cf(format[i]);
+if (func)
+len += func(args);
+else
 {
-if (spec_table[j].spec == format[i])
-{
-len += spec_table[j].func(args);
-break;
-}
+_putchar('%');
+_putchar(format[i]);
+len += 2;
 }
 }
 }

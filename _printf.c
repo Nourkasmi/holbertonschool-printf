@@ -13,8 +13,7 @@ specifier_t spec_table[] = {
 {'c', print_c}, {'s', print_s}, {'i', print_i}, {'d', print_d}, {0, NULL}
 };
 if (format == NULL)
-printf ("we are heeree ");
-return (0);
+return (-1);
 va_start(args, format);
 while (format[i])
 {

@@ -28,7 +28,7 @@ i++;
 else
 {
 i++;
-func = cf(format[i]);
+func = correctfunc(format[i]);
 if (func)
 len += func(args);
 else

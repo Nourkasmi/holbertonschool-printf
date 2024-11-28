@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * cf - chose the corect func
+ * correctfunc - chose the corect func
  * @c: spec
  * Return: correct func
  */
-int (*cf(char c))(va_list)
+int (*correctfunc(char format))(va_list)
 {
 specifier_t spec_table[] = {
 {'c', print_c}, {'s', print_s}, {'i', print_i}, {'d', print_d}, {0, NULL}
@@ -13,7 +13,7 @@ specifier_t spec_table[] = {
 int i;
 for (i = 0; spec_table[i].spec; i++)
 {
-if (spec_table[i].spec == c)
+if (spec_table[i].spec == format)
 return (spec_table[i].func);
 }
 return (NULL);

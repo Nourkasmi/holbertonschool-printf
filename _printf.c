@@ -6,10 +6,8 @@
  * Return: Number of characters printed
  */
 int _printf(const char *format, ...)
-{
-va_list args;
-int i = 0, len = 0;
-int (*func)(va_list);
+{va_list args;
+int i = 0, len = 0, (*func)(va_list);
 if (format == NULL)
 return (-1);
 va_start(args, format);
@@ -19,7 +17,6 @@ if (format[i] == '%')
 {
 if (format[i + 1] == '\0')
 {
-va_end(args);
 return (-1);
 }
 if (format[i + 1] == '%')
@@ -39,9 +36,7 @@ else
 _putchar('%');
 _putchar(format[i]);
 len += 2;
-}
-}
-}
+}}}
 else
 {
 _putchar(format[i]);

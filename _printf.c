@@ -10,14 +10,13 @@ int _printf(const char *format, ...)
 va_list args;
 int i = 0, len = 0, j = 0;
 specifier_t spec_table[] = {
-{'c', print_c},
-{'s', print_s},
-{'i', print_i}, {'d', print_d},
-{0, NULL}
+{'c', print_c}, {'s', print_s}, {'i', print_i}, {'d', print_d}, {0, NULL}
 };
 if (format == NULL)
 return (0);
 va_start(args, format);
+if (format == NULL)
+return (0);
 while (format[i])
 {
 if (format[i] == '%' && format[i + 1] == '%')

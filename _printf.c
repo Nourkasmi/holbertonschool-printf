@@ -17,13 +17,20 @@ return (-1);
 va_start(args, format);
 while (format[i])
 {
-if (format[i] == '%' && format[i + 1] == '%')
+if (format[i] == '%')
+{
+if (format[i + 1] == '\0')
+{
+va_end(args);
+return (-1);
+}
+if (format[i + 1] == '%')
 {
 _putchar('%');
 len++;
-i += 1;
+i++;
 }
-else if (format[i] == '%' && format[i + 1] != '\0')
+else
 {
 i++;
 for (j = 0; spec_table[j].spec; j++)
@@ -32,6 +39,7 @@ if (spec_table[j].spec == format[i])
 {
 len += spec_table[j].func(args);
 break;
+}
 }
 }
 }

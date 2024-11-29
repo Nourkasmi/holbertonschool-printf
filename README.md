@@ -77,7 +77,7 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 ``` 
 ---
 
-### **example/testing**
+### **Example/testing**
 ```bash
 
 #include "main.h"

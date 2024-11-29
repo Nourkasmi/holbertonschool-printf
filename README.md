@@ -1,32 +1,90 @@
-# **_printf**
+# **_printf Project**
 
 ## **Description**
+`_printf` is a custom implementation of the standard C library function `printf`. It formats and prints data to the standard output, supporting specific format specifiers and features.
 
-The `_printf` function is a custom implementation of the C standard library function `printf`. It provides formatted output conversion and printing, supporting various format specifiers to display different data types.
-
-This project is part of the **Low-Level Programming Curriculum** at **Holberton School**
+This project is part of the Holberton School curriculum
 
 ---
 
 ## **Features**
+The `_printf` function supports the following format specifiers:
 
-- Handles the following format specifiers:
-  - `%c` - Prints a single character.
-  - `%s` - Prints a string.
-  - `%d` and `%i` - Prints integers.
-  - `%%` - Prints a literal percent sign.
-
-- Custom-built helper functions for number handling:
-  - Recursive integer printing for `%d` and `%i`.
-
-- Error handling:
-  - Returns `(null)` if the format string is `NULL`.
-
-- Returns the total number of characters printed.
+- **%c**: Prints a single character.
+- **%s**: Prints a string.
+- **%d**: Prints a decimal integer.
+- **%i**: Prints an integer.
+- **%%**: Prints a literal `%` character.
 
 ---
 
-## **Prototype**
+## **How It Works**
+1. The `_printf` function receives a format string and optional arguments.
+2. It iterates through the format string:
+   - If a character is not `%`, it is printed directly using `_putchar`.
+   - If `%` is encountered, the next character determines the action:
+     - `%%`: Prints `%`.
+     - Valid specifier (`c`, `s`, `d`, `i`): Calls the corresponding function through `correctfunc`.
+     - Invalid specifier: Prints `%` followed by the invalid character.
+3. The `correctfunc` function uses a table (`specifier_t` struct) to map specifiers to their corresponding functions.
+4. Each specific print function (`print_c`, `print_s`, `print_i`, etc.) handles its own type of data and prints it.
+5. Returns the total number of characters printed.
 
-```c
-int _printf(const char *format, ...);
+---
+
+## **File Descriptions**
+
+### **main.h**
+This is the header file containing:
+- Function prototypes for `_printf`, `_putchar`, `correctfunc`, and the specific print functions.
+- Definition of the `specifier_t` struct for the table.
+
+### **_printf.c**
+The core function:
+- Manages the parsing of the format string.
+- Calls `correctfunc` for format specifiers.
+- Uses `_putchar` for direct printing.
+
+### **correctfunc.c**
+Handles:
+- Matching format specifiers with their corresponding functions using a table (`specifier_t` array).
+
+### **print_functions.c**
+Contains:
+- `print_c`: Prints a character.
+- `print_s`: Prints a string (handles `NULL` strings by printing `(null)`).
+- `print_i` and `print_d`: Print integers and decimals, supporting negative numbers.
+
+### **_putchar.c**
+A utility function:
+- Writes a single character to the standard output.
+
+---
+
+### **Requirements**
+- `Operating System`: Linux or macOS.
+- `Compiler`: gcc with flags -Wall -Werror -Wextra -pedantic -std=gnu89
+- `Followed Betty coding style guidelines`
+
+---
+
+## **Compilation/Installation**
+To use `_printf` in your project, clone the repository and compile the source files:
+```bash
+git clone <https://github.com/wwalid18/holbertonschool-printf>
+cd <holbertonschool-printf>
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+
+### **example/testing**
+
+#include "main.h"
+
+int main(void)
+{
+    _printf("Character: %c\n", 'H');
+    _printf("String: %s\n", "Hello, world!");
+    _printf("Integer: %d\n", 42);
+    _printf("Percent: %%\n");
+
+    return (0);
+}

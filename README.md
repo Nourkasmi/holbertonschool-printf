@@ -74,8 +74,11 @@ To use `_printf` in your project, clone the repository and compile the source fi
 git clone <https://github.com/wwalid18/holbertonschool-printf>
 cd <holbertonschool-printf>
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+``` 
+---
 
 ### **example/testing**
+```bash
 
 #include "main.h"
 

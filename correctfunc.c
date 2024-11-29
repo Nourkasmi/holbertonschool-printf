@@ -2,7 +2,7 @@
 
 /**
  * correctfunc - chose the corect func
- * @c: spec
+ * @format: spec
  * Return: correct func
  */
 int (*correctfunc(char format))(va_list)

@@ -1,64 +1,80 @@
-.\" Manpage for _printf
-.TH _PRINTF 3 "November 2024" "1.0" "Custom Library Functions"
+.TH _PRINTF 3 "November 2024" "Custom Library" "Custom Functions Manual"
 .SH NAME
-_printf \- Custom implementation of printf function
+_printf \- custom implementation of the printf function.
+
 .SH SYNOPSIS
+.B #include "main.h"
+
 .B int _printf(const char *format, ...);
+
 .SH DESCRIPTION
-The
 .B _printf
-function is a custom implementation of the standard
-.B printf
-function. It formats and prints output to the standard output based on the format string provided as the first argument.
+is a custom implementation of the standard library function `printf`. It formats and prints data to the standard output according to a specified format.
 
-The
+The function takes a
 .B format
-string may contain ordinary characters and format specifiers, such as:
+string as its first argument, followed by a variable number of arguments matching the format specifiers.
+
+.SH FORMAT SPECIFIERS
+The following format specifiers are supported:
+
 .TP
-.B \%c
-Prints a character.
+.B %c
+Prints a single character.
+
 .TP
-.B \%s
-Prints a string of characters.
+.B %s
+Prints a null-terminated string.
+
 .TP
-.B \%i
+.B %i, %d
 Prints an integer.
+
 .TP
-.B \%d
-Prints a decimal (signed integer).
-
-The format specifiers are followed by corresponding arguments that are used to format the output.
-
-.SH PARAMETERS
-.B format
-The format string containing the characters and format specifiers.
-.PP
-The function accepts a variable number of arguments corresponding to the format specifiers in the
-.B format
-string.
+.B %%
+Prints a literal percent sign.
 
 .SH RETURN VALUE
-The function returns the total number of characters printed (excluding the null byte used to end strings).
+.B _printf
+returns the total number of characters printed (excluding the null byte used to end output to strings).
 
-If the format string is NULL, the function returns 0.
+If the format string is
+.B NULL
+, or if an invalid format specifier is encountered, the function returns
+.B \-1.
 
 .SH EXAMPLES
-Example usage:
-
+.B Example 1:
 .nf
-  int len;
-  len = _printf("Hello, %s! You are %d years old.\n", "John", 25);
-  printf("Printed %d characters.\n", len);
+#include "main.h"
+
+int main(void)
+{
+    _printf("Character: %c\n", 'A');
+    _printf("String: %s\n", "Hello, world!");
+    _printf("Integer: %i\n", 42);
+    _printf("Percent sign: %%\n");
+
+    return (0);
+}
 .fi
 
-This prints:
+Output:
 .nf
-Hello, John! You are 25 years old.
-Printed 35 characters.
+Character: A
+String: Hello, world!
+Integer: 42
+Percent sign: %
 .fi
+
+.SH FILES
+man_3_printf
 
 .SH SEE ALSO
-.B printf(3)
-.SH AUTHORS
-This custom implementation of the printf function was created as part of a learning project.
+printf(3)
 
+.SH AUTHOR
+Custom implementation by [Your Name].
+
+.SH BUGS
+Function may not handle all edge cases or unsupported format specifiers.

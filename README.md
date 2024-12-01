@@ -91,3 +91,9 @@ int main(void)
 
     return (0);
 }
+```
+---
+### **Authors** 
+This project is made by:
+- Nour Kasmi [GitHub Profile](https://github.com/Nourkasmi)
+- Walid Chaouachi [GitHub Profile](https://github.com/wwalid18)

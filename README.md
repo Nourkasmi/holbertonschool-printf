@@ -95,5 +95,7 @@ int main(void)
 ---
 ### **Authors** 
 This project is made by:
-- Nour Kasmi [![GitHub](https://img.shields.io/badge/GitHub-Nourkasmi-000000?style=flat&logo=github)](https://github.com/Nourkasmi)
-- Walid Chaouachi [![GitHub](https://img.shields.io/badge/GitHub-wwalid18-000000?style=flat&logo=github)](https://github.com/wwalid18)
+
+- [![GitHub](https://img.shields.io/badge/GitHub-Nourkasmi-000000?style=flat&logo=github)](https://github.com/Nourkasmi)
+
+- [![GitHub](https://img.shields.io/badge/GitHub-wwalid18-000000?style=flat&logo=github)](https://github.com/wwalid18)

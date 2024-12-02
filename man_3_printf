@@ -74,7 +74,7 @@ man_3_printf
 printf(3)
 
 .SH AUTHOR
-Custom implementation by [Your Name].
+Custom implementation by [Walid Chaouachi and Nour Kasmi].
 
 .SH BUGS
 Function may not handle all edge cases or unsupported format specifiers.

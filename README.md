@@ -84,13 +84,17 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 
 int main(void)
 {
-    _printf("Character: %c\n", 'H');
-    _printf("String: %s\n", "Hello, world!");
-    _printf("Integer: %d\n", 42);
-    _printf("Percent: %%\n");
-
+    _printf("Character: %c \n", 'A');
+    _printf("String: %s \n", "Hello, world!");
+    _printf("Integer: %i \n", 42);
+    _printf("Percent sign: %% \n");
     return (0);
 }
+Output:
+Character: A 
+String: Hello, world! 
+Integer: 42 
+Percent sign: % 
 ```
 ---
 ### **Authors** 
